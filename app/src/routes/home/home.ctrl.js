@@ -1,14 +1,21 @@
 "use strict";
 
-const hello = (req, res) => {
-    res.render("home/index.ejs");
+const output = {
+    hello : (req, res) => {
+        res.render("home/index.ejs");
+    },
+    login : (req, res) => {
+        res.render("home/login.ejs");
+    },
 };
 
-const login = (req, res) => {
-    res.render("home/login.ejs");
+const process = {
+    login: (req, res) => {
+        console.log(req.body);
+    },
 };
 
 module.exports = {
-    hello,
-    login,
+    output,
+    process,
 };

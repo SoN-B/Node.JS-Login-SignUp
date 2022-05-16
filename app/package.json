@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.0",
     "ejs": "^3.1.7",
     "express": "^4.18.1"
   },
@@ -9,9 +10,8 @@
   "bin": {
     "youtube": "bin/www.js"
   },
-  "devDependencies": {},
   "scripts": {
-    "start": "node ./bin/www.js",
+    "start": "nodemon ./bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
