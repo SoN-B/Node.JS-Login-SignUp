@@ -4,7 +4,8 @@
 //javascript에서 html에 존재하는 데이터들을 가져와서 제어
 const id = document.querySelector("#id"),//선택자(ejs안에서 id값들)
 psword = document.querySelector("#psword"),//#은 내가 지정한 태그라는 뜻
-loginBtn = document.querySelector("button");//버튼은 태그 그대로를 가져옴(input은 두개인데,btn은 한개라서)
+//loginBtn = document.querySelector("button");//버튼은 태그 그대로를 가져옴(input은 두개인데,btn은 한개라서)
+loginBtn = document.querySelector("#button");
 
 loginBtn.addEventListener("click", login);
 

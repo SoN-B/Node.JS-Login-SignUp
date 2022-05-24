@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home/login.css">
-    <script src="js/home/login.js" defer></script>
+    <script src="js/home/register.js" defer></script>
     <!-- js/home/login.js랑 login.ejs연결 -->
     <title>Document</title>
 </head>
@@ -17,7 +17,9 @@
             <input id="name" type="text" placeholder="이름"/>
             <input id="psword" type="password" placeholder="비밀번호"/>
             <input id="confirm-psword" type="password" placeholder="비밀번호 확인"/>
-            <button>SIGN UP</button>
+            <!-- <button>SIGN UP</button> -->
+            <p id = "button">SIGN UP</p>
+            <!-- form 안에있는 button태그는 클릭시, 새로고침되어짐 -->
             <p class="message">Already registered? <a href="/login">login</a></p>
           </form>
         </div>
