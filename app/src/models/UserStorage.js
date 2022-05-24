@@ -34,6 +34,14 @@ class UserStorage{
 
         return userInfo;//SoNB,123,손정호(0번째 인덱스인것들만)
     }
+
+    static save(userInfo) {
+        const users = this.#users;
+        users.id.push(userInfo.id);
+        users.name.push(userInfo.name);
+        users.psword.push(userInfo.psword);
+        return {success : true};
+    }
 }
 
 module.exports = UserStorage;

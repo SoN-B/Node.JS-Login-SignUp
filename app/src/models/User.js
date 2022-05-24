@@ -9,18 +9,23 @@ class User{
     }
 
     login(){
-        const body = this.body;
-        const {id, psword} = UserStorage.getUserInfo(body.id);
+        const client = this.body;
+        const {id, psword} = UserStorage.getUserInfo(client.id);
         //id,psword,name 모두 불러올 수 있지만 로그인은 두개로도 충분
         //여기서 id, psword는 서버에서 가져온거임
 
         if(id){//내가 찾는 아이디가 서버에 있는지확인
-            if(id === body.id && psword === body.psword){
+            if(id === client.id && psword === client.psword){
                 return { success: true };
             }
             return { success: false, msg: "비밀번호가 틀렸습니다."};
         }
         return { success: false, msg: "존재하지 않는 아이디입니다."};
+    }
+    register(){
+        const client = this.body;
+        const response = UserStorage.save(client);
+        return response;
     }
 }
 
