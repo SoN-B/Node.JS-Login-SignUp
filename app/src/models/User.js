@@ -8,9 +8,11 @@ class User{
         this.body = body;//클라이언트가 입력한것(id, psword)
     }
 
-    login(){
+    async login(){//비동기 함수로 바꿔줌
         const client = this.body;
-        const {id, psword} = UserStorage.getUserInfo(client.id);
+        const {id, psword} = await UserStorage.getUserInfo(client.id);
+        //await은 항상 프로미스를 반환하는 애한테만 가능
+        //console.log가 먼저 찍힐 수 있어서 데이터 불러올 수 있는 시간이 필요함(await)
         //id,psword,name 모두 불러올 수 있지만 로그인은 두개로도 충분
         //여기서 id, psword는 서버에서 가져온거임
 
