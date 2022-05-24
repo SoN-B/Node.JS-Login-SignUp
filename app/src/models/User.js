@@ -24,10 +24,17 @@ class User{
         }
         return { success: false, msg: "존재하지 않는 아이디입니다."};
     }
-    register(){
+    async register(){
         const client = this.body;
-        const response = UserStorage.save(client);
+        try{
+        const response = await UserStorage.save(client);
+        //clint정보가 Userstorage에 저장하는데 오래 걸리기때문에 await
         return response;
+        } catch (err) {//throw
+            return {success: false, msg: err};
+            //여기서 err는 오브젝트이기에, 문자열로 콘솔창에 출력하고 싶다면
+            //throw Error -> throw로 변경해야함(UserStorage.js)
+        }
     }
 }
 

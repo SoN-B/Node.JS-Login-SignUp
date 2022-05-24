@@ -21,9 +21,9 @@ const process = {
         //로그인 함수를 실행하는데도, 오래걸리기때문에 여기서도 await
         return res.json(response);//클라이언트에게 던져줌
     },
-    register: (req, res) => {
+    register: async (req, res) => {
         const user = new User(req.body);
-        const response = user.register();
+        const response = await user.register();
         return res.json(response);
     }
 };
