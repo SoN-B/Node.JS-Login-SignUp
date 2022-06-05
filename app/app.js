@@ -3,6 +3,8 @@
 //모듈
 const express = require("express");
 const bodyParser = require("body-parser");
+const morgan = require("morgan");
+const logger = require("./src/config/logger");
 const dotenv = require("dotenv");
 /*환경변수 관리
 외부에 노출되어선 안되는것들을 환경변수로 감춤
@@ -22,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 /*bodyParser : URL을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될경우
 제대로 인식되지 않는 문제 해결*/
+app.use(morgan("tiny", {stream: logger.stream}));
 
 app.use("/", home); //use -> 미들 웨어를 등록해주는 메서드.
 

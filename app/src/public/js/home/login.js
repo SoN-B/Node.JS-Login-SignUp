@@ -10,6 +10,9 @@ loginBtn = document.querySelector("#button");
 loginBtn.addEventListener("click", login);
 
 function login() {
+    if(!id.value) return alert("아이디를 입력해주세요.");
+    if(!psword.value) return alert("비밀번호를 입력해주세요.");
+
     const req = { //요청 데이터
         id : id.value,
         psword : psword.value,
@@ -30,6 +33,7 @@ function login() {
         if(res.success) { //success키값이 true이면,
             location.href = "/"; //루트경로 이동(홈화면)
         } else {//실패하면 msg전달 받은거 띄움
+            if (res.err) return alert(res.err);
             alert(res.msg);
         }
     })

@@ -11,7 +11,7 @@ class UserStorage{
                 //사용자로부터 받아온 id를 통해 query검색
                 
                 if(err) reject(`${err}`);
-                resolve(data[0]);//배열형태로 전달 되기 때문에 0번지전달
+                else resolve(data[0]);//배열형태로 전달 되기 때문에 0번지전달
                 //콜백함수의 return임(전체의 return이 X), 따라서 promise씀
             });
         });
@@ -26,7 +26,7 @@ class UserStorage{
                 if(err) reject(`${err}`);
                 //err가 object객체이기 때문에, 문자열로 던질것임
                 //경고창이 [object Object]나오는거 방지
-                resolve({ success : true });
+                else resolve({ success : true });
             });
         });
     }

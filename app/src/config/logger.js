@@ -2,7 +2,7 @@ const { createLogger, transports, format } = require("winston");
 const { combine, timestamp, simple, colorize, printf, label } = format;
 
 const printFormat = printf(({timestamp, label, level, message}) => {//사용자지정포맷
-    return `${timestamp} [${label}] ${level} : ${message}`//app.js의 message
+    return `${timestamp} [${label}] ${level} : ${message}`//www.js의 message
 }); //마지막이 최종 출력포맷이됨
 
 const printLogFormat = {
@@ -45,6 +45,10 @@ const logger = createLogger({
 if (process.env.NODE_ENV !== "production") { //실제 서비스중인 서버가 아니면
     logger.add(opts.console);
 } //실제 서비스중인 서버와 개발중인 서버를 구분지을 수 있음
+
+logger.stream = {
+    write: (message) => logger.info(message),
+};//morgan과의 연결
 
 module.exports = logger;
 

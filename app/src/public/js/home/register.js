@@ -36,6 +36,7 @@ function register() {
         if(res.success) { //success키값이 true이면,
             location.href = "/login"; //루트경로 이동(홈화면)
         } else {//실패하면 msg전달 받은거 띄움
+            if (res.err) return alert(res.err);
             alert(res.msg);
         }
     })
