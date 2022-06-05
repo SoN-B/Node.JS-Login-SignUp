@@ -17,7 +17,6 @@ class User{
             //id,psword,name 모두 불러올 수 있지만 로그인은 두개로도 충분
             //여기서 id, psword는 서버에서 가져온게 저장돼있음
             //해당데이터를 전부 받아올때까지 기다려
-
             if(user){//내가 찾는 아이디가 서버에 있는지확인
                 if(user.id === client.id && user.psword === client.psword){
                     return { success: true, msg: "로그인 성공!" };

@@ -12,6 +12,7 @@ class UserStorage{
                 
                 if(err) reject(`${err}`);
                 else resolve(data[0]);//배열형태로 전달 되기 때문에 0번지전달
+                //존재하지 않는 id를 검색할경우 data[0]은 빈배열이됌(undefined)
                 //콜백함수의 return임(전체의 return이 X), 따라서 promise씀
             });
         });
