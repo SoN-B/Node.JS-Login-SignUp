@@ -32,6 +32,7 @@ const opts = {
         level: "info",//2레벨인데, 다른곳의 2,1,0레벨인 로그들 출력가능
         format: printLogFormat.file, //format이 file에 저장되기위한 형태
     }),
+
     console: new transports.Console({//log를 콘솔로찍음
         level: "info",
         format: printLogFormat.console, //format이 console에 찍히기위한 형태

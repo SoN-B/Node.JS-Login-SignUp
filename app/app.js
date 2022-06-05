@@ -12,6 +12,7 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config(); //환경변수 모듈 동작
 //.env에 등록되어있는 변수들을 Node.js에서 접근할 수 있도록 process.env에 등록시켜줌
+//dotenv.config({path: 경로}); 와 같은 식으로 .env의 파일 경로를 지정가능
 
 //라우팅
 const home = require("./src/routes/home");

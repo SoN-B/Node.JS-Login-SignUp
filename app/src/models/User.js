@@ -45,4 +45,9 @@ class User{
 }
 
 module.exports = User;
-
+/*
+*함수는 한가지 기능만 수행하도록 구현해줘야함.
+*클래스는 User와 Userstorage처럼 각자의 역할을 분명하게 구분시켜주는 것이 좋음.
+*UserStorage에서는 DB를 CRUD하는 역할만 수행하고, 해당데이터를 가지고 검증&조작하는 것은
+*User가 수행하도록 역할을 구분해주는 것이죠.
+*/
