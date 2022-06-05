@@ -43,7 +43,9 @@ const process = {
         const url = {
             method: "POST",
             path: "/register",
-            status: response.err ? 400: 200,
+            status: response.err ? 409: 201,
+            //200이 아니라 201 -> 새로운 데이터를 생성하는것이기 때문
+            //클라이언트측 실수이기 때문에 409!
         }
         
         log(response, url);
